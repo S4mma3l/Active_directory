@@ -93,6 +93,6 @@ Este script es una herramienta de auditoría y reconocimiento diseñada para adm
 
 ---
 
-### **Contribución y Licencia**
+### **Contribución**
 
 Este repositorio es de código abierto. Si desea contribuir con mejoras, correcciones de errores o nuevas funcionalidades, ¡su colaboración es bienvenida!
