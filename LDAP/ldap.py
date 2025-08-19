@@ -22,11 +22,11 @@ CONFIG = {
     "PING_TIMEOUT_MS": 800,
     "THREADS": 200,
     # Active Directory (cuenta de lectura autorizada)
-    "AD_SERVER": "CRFF-DESIGN2.lossuenosresort.com",
-    "AD_DOMAIN": "lossuenosresort.com",
-    "AD_USER": "lossuenosresort\\cuenta_lectura",
+    "AD_SERVER": "CRFF-DESIGN2.dominio.local",
+    "AD_DOMAIN": "dominio.local",
+    "AD_USER": "dominio\\cuenta_lectura",
     "AD_PASS": "********",               # usa un secreto/variable de entorno en producción
-    "AD_BASE_DN": "DC=lossuenosresort,DC=com",
+    "AD_BASE_DN": "DC=dominio,DC=com",
     "USE_LDAPS": False                   # True si tienes 636/TLS y certificado OK
 }
 OUT_DIR = Path.cwd() / "salidas_inventario"
