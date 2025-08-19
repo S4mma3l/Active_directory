@@ -1,0 +1,88 @@
+2025-08-19 15:52:18,476 - INFO - Directorio de resultados 'forensic_results' creado.
+2025-08-19 15:52:18,477 - INFO - Iniciando la auditoría para la categoría: 'network_discovery'
+2025-08-19 15:52:18,478 - INFO - Ejecutando comando: 'net view /all'
+2025-08-19 15:52:48,409 - ERROR - Comando fallido: 'net view /all' - Error: 2 - Mensaje: System error 6118 has occurred.
+
+The list of servers for this workgroup is not currently available
+2025-08-19 15:52:48,410 - INFO - Ejecutando comando: 'net view \%HOSTNAME%'
+2025-08-19 15:52:48,473 - ERROR - Comando fallido: 'net view \%HOSTNAME%' - Error: 2 - Mensaje: System error 1702 has occurred.
+
+The binding handle is invalid.
+2025-08-19 15:52:48,474 - INFO - Ejecutando comando: 'net share'
+2025-08-19 15:52:48,603 - INFO - Ejecutando comando: 'net session'
+2025-08-19 15:52:48,756 - INFO - Ejecutando comando: 'wmic volume list brief'
+2025-08-19 15:52:48,905 - INFO - Ejecutando comando: 'wmic share get'
+2025-08-19 15:52:49,036 - INFO - Ejecutando comando: 'wmic logicaldisk get'
+2025-08-19 15:52:49,185 - INFO - Ejecutando comando: 'netstat -an'
+2025-08-19 15:52:49,261 - INFO - Ejecutando comando: 'netstat -nr'
+2025-08-19 15:52:49,485 - INFO - Ejecutando comando: 'netstat -n'
+2025-08-19 15:52:49,562 - INFO - Ejecutando comando: 'netstat -s'
+2025-08-19 15:52:49,635 - INFO - Ejecutando comando: 'ipconfig /all'
+2025-08-19 15:52:49,719 - INFO - Resultados de 'network_discovery' guardados en 'forensic_results\network_discovery_results.json'
+2025-08-19 15:52:49,719 - INFO - HASH SHA256 para el archivo: 1bb351f619584479643e7b3e43510195930e298baf3ebd3f49803e22a2e53e0e
+2025-08-19 15:52:49,719 - INFO - Iniciando la auditoría para la categoría: 'system_info'
+2025-08-19 15:52:49,720 - INFO - Ejecutando comando: 'echo %DATE% %TIME%'
+2025-08-19 15:52:49,753 - INFO - Ejecutando comando: 'hostname'
+2025-08-19 15:52:49,821 - INFO - Ejecutando comando: 'systeminfo'
+2025-08-19 15:52:51,904 - INFO - Ejecutando comando: 'wmic csproduct get name'
+2025-08-19 15:52:52,038 - INFO - Ejecutando comando: 'wmic bios get serialnumber'
+2025-08-19 15:52:52,172 - INFO - Ejecutando comando: 'wmic computersystem list brief'
+2025-08-19 15:52:52,314 - INFO - Resultados de 'system_info' guardados en 'forensic_results\system_info_results.json'
+2025-08-19 15:52:52,314 - INFO - HASH SHA256 para el archivo: 10af061c1b80ade2f2f8b7df23901a7dc96206a56a5ee3df52f3245392c35cf0
+2025-08-19 15:52:52,314 - INFO - Iniciando la auditoría para la categoría: 'users_info'
+2025-08-19 15:52:52,314 - INFO - Ejecutando comando: 'net users'
+2025-08-19 15:52:52,514 - INFO - Ejecutando comando: 'net localgroup administrators'
+2025-08-19 15:52:52,653 - ERROR - Comando fallido: 'net localgroup administrators' - Error: 2 - Mensaje: System error 1376 has occurred.
+
+The specified local group does not exist.
+2025-08-19 15:52:52,653 - INFO - Ejecutando comando: 'net group administrators'
+2025-08-19 15:52:52,750 - ERROR - Comando fallido: 'net group administrators' - Error: 2 - Mensaje: This command can be used only on a Windows Domain Controller.
+
+More help is available by typing NET HELPMSG 3515.
+2025-08-19 15:52:52,751 - INFO - Ejecutando comando: 'wmic rdtoggle list'
+2025-08-19 15:52:52,895 - INFO - Ejecutando comando: 'wmic useraccount list'
+2025-08-19 15:52:55,783 - INFO - Ejecutando comando: 'wmic group list'
+2025-08-19 15:52:57,674 - INFO - Ejecutando comando: 'wmic netlogin get name,lastlogin,badpasswordcount'
+2025-08-19 15:52:57,805 - ERROR - Comando fallido: 'wmic netlogin get name,lastlogin,badpasswordcount' - Error: 2147749911 - Mensaje: Node - CRFF-DESIGN2
+
+ERROR:
+
+Description = Invalid query
+2025-08-19 15:52:57,805 - INFO - Ejecutando comando: 'wmic netclient list brief'
+2025-08-19 15:52:58,037 - INFO - Ejecutando comando: 'wmic nicconfig get'
+2025-08-19 15:52:58,239 - INFO - Ejecutando comando: 'wmic netuse get'
+2025-08-19 15:52:58,387 - INFO - Resultados de 'users_info' guardados en 'forensic_results\users_info_results.json'
+2025-08-19 15:52:58,387 - INFO - HASH SHA256 para el archivo: d8905d4978986f5bb7319a728cafa3d4d479655c328792c82f13d5ec674b2836
+2025-08-19 15:52:58,387 - INFO - Iniciando la auditoría para la categoría: 'services_tasks'
+2025-08-19 15:52:58,387 - INFO - Ejecutando comando: 'at'
+2025-08-19 15:52:58,460 - ERROR - Comando fallido: 'at' - Error: 1 - Mensaje: The AT command has been deprecated. Please use schtasks.exe instead.
+
+The request is not supported.
+2025-08-19 15:52:58,461 - INFO - Ejecutando comando: 'tasklist'
+2025-08-19 15:52:58,799 - INFO - Ejecutando comando: 'tasklist /svc'
+2025-08-19 15:52:59,113 - INFO - Ejecutando comando: 'schtasks'
+2025-08-19 15:52:59,570 - INFO - Ejecutando comando: 'net start'
+2025-08-19 15:52:59,686 - INFO - Ejecutando comando: 'sc query'
+2025-08-19 15:52:59,798 - INFO - Ejecutando comando: 'wmic service list brief'
+2025-08-19 15:53:00,420 - INFO - Ejecutando comando: 'wmic service list brief | findstr "Running"'
+2025-08-19 15:53:01,042 - INFO - Ejecutando comando: 'wmic service list brief | findstr "Stopped"'
+2025-08-19 15:53:01,645 - INFO - Ejecutando comando: 'wmic service list config'
+2025-08-19 15:53:02,383 - INFO - Resultados de 'services_tasks' guardados en 'forensic_results\services_tasks_results.json'
+2025-08-19 15:53:02,383 - INFO - HASH SHA256 para el archivo: 57e57a53932c7a6fa86a731b9036a97251572b75c76cfde8ec7d3e81fe0aac39
+2025-08-19 15:53:02,383 - INFO - Iniciando la auditoría para la categoría: 'registry_info'
+2025-08-19 15:53:02,383 - INFO - Ejecutando comando: 'reg query "HKCU\Control Panel\Desktop"'
+2025-08-19 15:53:02,490 - INFO - Resultados de 'registry_info' guardados en 'forensic_results\registry_info_results.json'
+2025-08-19 15:53:02,490 - INFO - HASH SHA256 para el archivo: 590504136f0bf0f82b1d1848893607311da0986616962be51eac9004a67c7ca6
+2025-08-19 15:53:02,490 - INFO - Iniciando la auditoría para la categoría: 'security_and_misc'
+2025-08-19 15:53:02,490 - INFO - Ejecutando comando: 'wevtutil gl Security'
+2025-08-19 15:53:02,561 - INFO - Ejecutando comando: 'auditpol /get /category:*'
+2025-08-19 15:53:02,626 - INFO - Ejecutando comando: 'vssadmin list shadows'
+2025-08-19 15:53:02,841 - INFO - Ejecutando comando: 'vssadmin list shadowstorage'
+2025-08-19 15:53:02,925 - INFO - Ejecutando comando: 'net start VSS'
+2025-08-19 15:53:03,027 - ERROR - Comando fallido: 'net start VSS' - Error: 2 - Mensaje: The requested service has already been started.
+
+More help is available by typing NET HELPMSG 2182.
+2025-08-19 15:53:03,028 - INFO - Resultados de 'security_and_misc' guardados en 'forensic_results\security_and_misc_results.json'
+2025-08-19 15:53:03,029 - INFO - HASH SHA256 para el archivo: 7cbe532b2380d18b16f2b3fc7d1a52563e9b4c2f5be639ed6ca209fb65e1f48e
+2025-08-19 15:53:03,050 - INFO - Reporte HTML generado en 'forensic_results\reporte_auditoria.html'
+2025-08-19 15:58:22,731 - INFO - Reporte HTML generado en 'forensic_results\reporte_auditoria.html'

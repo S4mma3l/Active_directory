@@ -1,0 +1,58 @@
+{
+  "network_discovery": [
+    "net view /all",
+    "net view \\%HOSTNAME%",
+    "net share",
+    "net session",
+    "wmic volume list brief",
+    "wmic share get",
+    "wmic logicaldisk get",
+    "netstat -an",
+    "netstat -nr",
+    "netstat -n",
+    "netstat -s",
+    "ipconfig /all"
+  ],
+  "system_info": [
+    "echo %DATE% %TIME%",
+    "hostname",
+    "systeminfo",
+    "wmic csproduct get name",
+    "wmic bios get serialnumber",
+    "wmic computersystem list brief"
+  ],
+  "users_info": [
+    "net users",
+    "net localgroup administrators",
+    "net group administrators",
+    "wmic rdtoggle list",
+    "wmic useraccount list",
+    "wmic group list",
+    "wmic netlogin get name,lastlogin,badpasswordcount",
+    "wmic netclient list brief",
+    "wmic nicconfig get",
+    "wmic netuse get"
+  ],
+  "services_tasks": [
+    "at",
+    "tasklist",
+    "tasklist /svc",
+    "schtasks",
+    "net start",
+    "sc query",
+    "wmic service list brief",
+    "wmic service list brief | findstr \"Running\"",
+    "wmic service list brief | findstr \"Stopped\"",
+    "wmic service list config"
+  ],
+  "registry_info": [
+    "reg query \"HKCU\\Control Panel\\Desktop\""
+  ],
+  "security_and_misc": [
+    "wevtutil gl Security",
+    "auditpol /get /category:*",
+    "vssadmin list shadows",
+    "vssadmin list shadowstorage",
+    "net start VSS"
+  ]
+}
